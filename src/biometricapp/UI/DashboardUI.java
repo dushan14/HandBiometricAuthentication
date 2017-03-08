@@ -19,7 +19,7 @@ public class DashboardUI extends javax.swing.JFrame {
     public DashboardUI(Profile profile) {
         initComponents();
         setLocationRelativeTo(null);
-        
+        this.setTitle(profile.getName()+"'s Dashboard");
         userNameLabel.setText(profile.getName());
     }
 
@@ -37,7 +37,9 @@ public class DashboardUI extends javax.swing.JFrame {
         signoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         userNameLabel.setText("Name");
 
@@ -53,10 +55,11 @@ public class DashboardUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(587, 587, 587)
+                .addContainerGap(566, Short.MAX_VALUE)
                 .addComponent(userNameLabel)
-                .addGap(26, 26, 26)
-                .addComponent(signoutButton))
+                .addGap(18, 18, 18)
+                .addComponent(signoutButton)
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,7 +71,7 @@ public class DashboardUI extends javax.swing.JFrame {
                 .addGap(467, 467, 467))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 500));
+        getContentPane().add(jPanel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

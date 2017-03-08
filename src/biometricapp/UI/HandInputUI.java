@@ -29,6 +29,7 @@ public class HandInputUI extends javax.swing.JFrame {
         submitButton.setText(btntext);
         
         pinkyTipText.requestFocusInWindow();
+        this.setTitle("Biometric Authentication");
 
     }
 
@@ -57,12 +58,15 @@ public class HandInputUI extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
         nameText = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 620));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout());
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pinkyTipText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -132,6 +136,7 @@ public class HandInputUI extends javax.swing.JFrame {
         indexTipText.setNextFocusableComponent(thumbTipText);
         jPanel2.add(indexTipText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 60, -1));
 
+        submitButton.setBackground(new java.awt.Color(255, 255, 255));
         submitButton.setText("submit");
         submitButton.setNextFocusableComponent(pinkyTipText);
         submitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -139,15 +144,16 @@ public class HandInputUI extends javax.swing.JFrame {
                 submitButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 120, 50));
+        jPanel2.add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 170, 50));
 
+        backButton.setBackground(new java.awt.Color(255, 255, 255));
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 70, -1));
+        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 70, -1));
 
         nameText.setNextFocusableComponent(submitButton);
         jPanel2.add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 170, -1));
@@ -155,11 +161,17 @@ public class HandInputUI extends javax.swing.JFrame {
         nameLabel.setText("Name:");
         jPanel2.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
+        jLabel2.setText("Fill the lengths in cm's");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biometricapp/Images/handImage.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 520, 550));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 520, 550));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 550));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 60, -1));
+
+        getContentPane().add(jPanel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,7 +211,7 @@ public class HandInputUI extends javax.swing.JFrame {
                 Profile signedInUserProfile=Process.checkProfile(tempProfile);
                 
                 if(signedInUserProfile==null){
-                    showMessageDialog(null,"No profile found !","Sign In Error",JOptionPane.ERROR_MESSAGE);
+                    showMessageDialog(null,"No profile found !","Sign In Error",JOptionPane.INFORMATION_MESSAGE);
                 }else{
                 
                 
@@ -291,6 +303,8 @@ public class HandInputUI extends javax.swing.JFrame {
     private javax.swing.JTextField indexTipText;
     private javax.swing.JTextField indexWidthText;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField middleHeightText;
     private javax.swing.JTextField middleTipText;

@@ -29,9 +29,8 @@ public class Process {
         
         int profileTempIndex = 0;
         for (Object o : all) {
-//            System.out.println(Encryptor.decryptedString(o.toString()));
             String proDataString = Encryptor.decryptedString(o.toString());
-//              bro@454.0@45.0@545.0@454.0@54.0@54545.0@454.0@545.0@54.0@545.0@54.0@45.0@454.0@54.0@445.0@
+//            bro@454.0@45.0@545.0@454.0@54.0@54545.0@454.0@545.0@54.0@545.0@54.0@45.0@454.0@54.0@445.0@
             //name,
             //thumbLenth,indexLenth,middleLenth,ringLenth,pinkyLenth,
             //thumbWidth,indexWidth,middleWidth,ringWidth,pinkyWidth,
